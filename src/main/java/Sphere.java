@@ -32,7 +32,7 @@ public class Sphere extends Primitive {
 		double lom = om.length();//TODO: ohne wurzel für effizienz
 		double ln = om.dot_prod(dir);
 		Vector intersection;
-		if (lom < radius) {//ray innerhalb kugel
+		if (lom > radius) {//ray innerhalb kugel
 			double h2 = radius * radius + ln * ln - lom * lom;
 			intersection = ray.getOrigin().add(dir.scale(ln - Math.sqrt(h2)));
 		} else {//ray außerhalb kugel
